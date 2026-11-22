@@ -37,7 +37,7 @@ export function OrderSummary({ lines, shipping = "standard", editable = false }:
           <dd className="display text-5xl">{money(t.total)}</dd>
         </div>
       </dl>
-      {!editable && <p className="mt-3 text-xs opacity-60">Prices in USD. Taxes are not applied in test mode.</p>}
+      {!editable && <p className="mt-3 text-xs opacity-60">Prices in INR. Taxes are not applied in test mode.</p>}
     </div>
   );
 }

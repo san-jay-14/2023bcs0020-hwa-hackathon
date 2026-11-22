@@ -10,9 +10,9 @@ export const SIZES: {
   dog: string;
   price: number;
 }[] = [
-  { id: "S", label: "Small", diameter: 8, opening: 4.5, dog: "Under 10 kg", price: 22 },
-  { id: "M", label: "Medium", diameter: 11, opening: 6, dog: "10 to 25 kg", price: 28 },
-  { id: "L", label: "Large", diameter: 14, opening: 7.5, dog: "Over 25 kg", price: 34 },
+  { id: "S", label: "Small", diameter: 8, opening: 4.5, dog: "Under 10 kg", price: 1850 },
+  { id: "M", label: "Medium", diameter: 11, opening: 6, dog: "10 to 25 kg", price: 2350 },
+  { id: "L", label: "Large", diameter: 14, opening: 7.5, dog: "Over 25 kg", price: 2850 },
 ];
 
 export const COLORS: { id: ColorId; name: string; hex: string; note: string; bg: string }[] = [
@@ -78,14 +78,14 @@ export const STAGES = [
   },
 ] as const;
 
-export const STAGE_PACK_PRICE = 16;
-export const BUNDLE_PRICE = 38;
+export const STAGE_PACK_PRICE = 1350;
+export const BUNDLE_PRICE = 3150;
 export const BUNDLE_SIZE: SizeId = "M";
 
-export const FREE_SHIPPING_OVER = 60;
+export const FREE_SHIPPING_OVER = 5000;
 export const SHIPPING_OPTIONS = [
-  { id: "standard", name: "Standard", eta: "5 to 7 business days", price: 6 },
-  { id: "express", name: "Express", eta: "2 to 3 business days", price: 14 },
+  { id: "standard", name: "Standard", eta: "5 to 7 business days", price: 500 },
+  { id: "express", name: "Express", eta: "2 to 3 business days", price: 1150 },
 ] as const;
 export type ShippingId = (typeof SHIPPING_OPTIONS)[number]["id"];
 

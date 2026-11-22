@@ -101,7 +101,7 @@ export function CartView() {
                 </div>
                 <ul className="mt-5 space-y-2 text-sm opacity-75">
                   <li>• Test mode: nothing is charged or shipped</li>
-                  <li>• Standard shipping $6, free over {money(FREE_SHIPPING_OVER)}</li>
+                  <li>• Standard shipping ₹500, free over {money(FREE_SHIPPING_OVER)}</li>
                   <li>• No account needed</li>
                 </ul>
               </div>

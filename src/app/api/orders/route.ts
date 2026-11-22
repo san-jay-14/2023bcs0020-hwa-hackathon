@@ -79,7 +79,7 @@ export async function POST(req: Request) {
       shippingMethod: ship.name,
       customer: { name: typeof customer.name === "string" ? customer.name : undefined, email: email || undefined },
       items: lines.map((l) => ({ title: lineTitle(l), qty: l.qty, unitPrice: unitPrice(l), lineTotal: unitPrice(l) * l.qty })),
-      totals: { currency: "USD", ...totals },
+      totals: { currency: "INR", ...totals },
       message: "Test order confirmed. Nothing was charged and nothing will ship.",
     },
     201,

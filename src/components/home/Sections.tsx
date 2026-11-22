@@ -242,7 +242,7 @@ export function FinalCTA() {
         </SplitText>
         <Fade delay={0.2}>
           <p className="mx-auto mt-8 max-w-xl text-xl font-medium">
-            Shells from $22. Stage Packs from $16. The Starter Bundle, a Medium shell plus one Stage Pack, is $38.
+            Shells from ₹1,850. Stage Packs from ₹1,350. The Starter Bundle, a Medium shell plus one Stage Pack, is ₹3,150.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <TicketButton href="/product" variant="sun" size="lg">

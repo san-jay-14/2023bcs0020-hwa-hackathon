@@ -100,7 +100,7 @@ export function Hero() {
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <TicketButton href="/product" variant="sun">
-                Shop · from $22
+                Shop · from ₹1,850
               </TicketButton>
               <TicketButton href="/features" variant="cream">
                 How it works

@@ -274,7 +274,7 @@ export function ProductView() {
                   { q: "What's in the box", a: `One ${sz.label.toLowerCase()} Longshift shell in ${col.name}${pack ? ` and a ${tr.name} Stage Pack with 6 loads of three Stages each` : ""}. Refills are sold separately.` },
                   { q: "How to use it", a: "Pick the tier by chew strength, load the three Stages widest on top, and leave. If your dog finishes early, go up a tier or rotate to a new variant. Never refill the same Stage on the spot. Count each load toward the day's food." },
                   { q: "Care and cleaning", a: "Wash the shell between loads. The straight-sided cone has no undercut, so it rinses clean. Inspect after every use and retire the shell if it is damaged." },
-                  { q: "Shipping and returns", a: "Standard shipping is $6, and free over $60. Express is $14. This store is in test mode, so nothing is charged or shipped." },
+                  { q: "Shipping and returns", a: "Standard shipping is ₹500, and free over ₹5,000. Express is ₹1,150. This store is in test mode, so nothing is charged or shipped." },
                 ]}
               />
             </div>

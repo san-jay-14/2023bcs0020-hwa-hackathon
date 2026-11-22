@@ -77,4 +77,4 @@ export function computeTotals(lines: CartLine[], shipping: ShippingId = "standar
 }
 
 export const money = (n: number) =>
-  n % 1 === 0 ? `$${n}` : `$${n.toFixed(2)}`;
+  n % 1 === 0 ? `₹${n.toLocaleString("en-IN")}` : `₹${n.toFixed(2)}`;
