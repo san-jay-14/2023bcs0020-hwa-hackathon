@@ -1,0 +1,241 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #0a1f1e;
+  --color-teal: #0e8a84;
+  --color-teal-deep: #0b5f5c;
+  --color-sun: #ffe600;
+  --color-coral: #ff5a36;
+  --color-peach: #ffb89a;
+  --color-caramel: #e39a3b;
+  --color-chestnut: #4b2a18;
+  --color-cream: #fff6e8;
+  --color-mint: #c8f2e4;
+  --font-display: var(--font-anton), Impact, sans-serif;
+  --font-sans: var(--font-archivo), system-ui, sans-serif;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+  --ease: cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+html {
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-sun);
+  color: var(--color-ink);
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.ls-seen .loader-root {
+  display: none !important;
+}
+
+.display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: 0.005em;
+  font-weight: 400;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Ticket (notched) shape, the engine.land signature */
+.ticket {
+  --n: 9px;
+  -webkit-mask:
+    radial-gradient(circle var(--n) at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle var(--n) at 100% 50%, #0000 97%, #000) right / 51% 100% no-repeat;
+  mask:
+    radial-gradient(circle var(--n) at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle var(--n) at 100% 50%, #0000 97%, #000) right / 51% 100% no-repeat;
+}
+
+.ticket-btn {
+  --bg: var(--color-sun);
+  --fg: var(--color-ink);
+  --hv: var(--color-ink);
+  --hvfg: var(--color-sun);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.35s var(--ease);
+  border: 0;
+}
+.ticket-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--hv);
+  transform: translateY(102%);
+  transition: transform 0.5s var(--ease);
+}
+.ticket-btn:hover::before,
+.ticket-btn:focus-visible::before {
+  transform: translateY(0);
+}
+.ticket-btn:hover,
+.ticket-btn:focus-visible {
+  color: var(--hvfg);
+}
+.ticket-btn > * {
+  position: relative;
+}
+.ticket-btn[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.tb-sun {
+  --bg: var(--color-sun);
+  --fg: var(--color-ink);
+  --hv: var(--color-ink);
+  --hvfg: var(--color-sun);
+}
+.tb-ink {
+  --bg: var(--color-ink);
+  --fg: var(--color-cream);
+  --hv: var(--color-coral);
+  --hvfg: var(--color-ink);
+}
+.tb-cream {
+  --bg: var(--color-cream);
+  --fg: var(--color-ink);
+  --hv: var(--color-sun);
+  --hvfg: var(--color-ink);
+}
+.tb-coral {
+  --bg: var(--color-coral);
+  --fg: var(--color-cream);
+  --hv: var(--color-ink);
+  --hvfg: var(--color-cream);
+}
+.tb-teal {
+  --bg: var(--color-teal);
+  --fg: var(--color-cream);
+  --hv: var(--color-ink);
+  --hvfg: var(--color-sun);
+}
+
+/* Link underline sweep */
+.u-link {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px no-repeat;
+  transition: background-size 0.5s var(--ease);
+}
+.u-link:hover {
+  background-size: 100% 2px;
+}
+
+/* Marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee var(--dur, 30s) linear infinite;
+}
+.marquee-rev .marquee-track {
+  animation-direction: reverse;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin-slow {
+  animation: spin-slow 18s linear infinite;
+}
+
+/* Hide scrollbars for horizontal scrollers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* Grain overlay */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-coral);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.has-cursor,
+  body.has-cursor a,
+  body.has-cursor button {
+    cursor: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .spin-slow {
+    animation: none;
+  }
+}
